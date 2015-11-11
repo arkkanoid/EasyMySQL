@@ -14,13 +14,6 @@ RUN apt-get -y install mysql-client mysql-server
 RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 RUN mkdir /db-backup
 
-# Set Standard settings
-ENV user user110
-ENV password password
-ENV host myhost
-ENV db db110
-ENV max_connections 10
-
 # Install starting script
 ADD ./start-database.sh /usr/local/bin/start-database.sh
 RUN chmod +x /usr/local/bin/start-database.sh
