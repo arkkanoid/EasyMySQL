@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER Nane Kratzke
+MAINTAINER Jordi Arcas
 
 # Install latest updates
 RUN apt-get update
@@ -15,12 +15,12 @@ RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysq
 RUN mkdir /db-backup
 
 # Set Standard settings
-ENV user root
+ENV user user110
 ENV password password
 ENV host myhost
-ENV db lite
+ENV db db110
 ENV dbfile /db-backup/bakup.sql
-ENV right READ
+ENV max_connections 10
 
 # Install starting script
 ADD ./start-database.sh /usr/local/bin/start-database.sh
