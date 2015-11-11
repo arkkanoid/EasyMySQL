@@ -19,7 +19,6 @@ ENV user user110
 ENV password password
 ENV host myhost
 ENV db db110
-ENV dbfile /db-backup/bakup.sql
 ENV max_connections 10
 
 # Install starting script

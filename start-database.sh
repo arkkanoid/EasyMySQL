@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # This script starts the database server.
+dbfile="/db-backup/bakup.sql"
 
 echo "Adding data into MySQL"
 /usr/sbin/mysqld &
